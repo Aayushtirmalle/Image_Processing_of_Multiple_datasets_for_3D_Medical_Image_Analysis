@@ -3,9 +3,24 @@ Training the nnUNetv2 using virtual machine and Docker
 
 # Setting up the software for training
 
+1. Install Pytorch, cuda, 
+
 1. Install the nnUNet software using interactive shell
 
-2. set the path for raw, preprocessed and trained data(results), while using docker set the paths with respect to the docker path.
+
+git clone https://github.com/MIC-DKFZ/nnUNet.git
+cd nnUNet
+pip install -e .
+
+
+2. Create folders "nnUNet_raw, nnUNet_preprocessed, nnUNet_trained data" and set the path for the same, while using docker set the paths with respect to the docker path.
+
+Locate the .bashrc file in your home folder of the docker and add the following lines to the bottom:
+
+export nnUNet_raw="/home/abc/nnUNetFrame/daraset/nnUNet_raw"
+export nnUNet_preprocessed="/media/fabian/nnUNet_preprocessed"
+export nnUNet_results="/media/fabian/nnUNet_results"
+
 
 3. Install the hiddenlayer for nnUNet
 
