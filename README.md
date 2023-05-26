@@ -1,7 +1,7 @@
 # nnUNetv2
 Training the nnUNetv2 using virtual machine and Docker
 
-#Setting up the software for training
+# Setting up the software for training
 
 1. Install Pytorch, cuda, 
 
@@ -25,7 +25,7 @@ export nnUNet_results="/media/fabian/nnUNet_results"
 3. Install the hiddenlayer for nnUNet
 
 
-#Preprocessing the data for training
+# Preprocessing the data for training
 
 1. download the raw dataset
 
