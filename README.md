@@ -9,6 +9,7 @@ Training the nnUNetv2 using virtual machine and Docker
 
 
 git clone https://github.com/MIC-DKFZ/nnUNet.git
+
 cd nnUNet
 pip install -e .
 
