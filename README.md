@@ -21,7 +21,7 @@ Locate the .bashrc file in your home folder of the docker and add the following 
         export nnUNet_results="/home/abc/nnUNetFrame/dataset/nnUNet_results"
 
 
-3. Install the hiddenlayer for nnUNet
+4. Install the hiddenlayer for nnUNet
   
         pip install --upgrade git+https://github.com/FabianIsensee/hiddenlayer.git
 
