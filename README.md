@@ -31,3 +31,6 @@ Locate the .bashrc file in your home folder of the docker and add the following 
 
 2. Preprocess the raw data
 
+
+
+ 
