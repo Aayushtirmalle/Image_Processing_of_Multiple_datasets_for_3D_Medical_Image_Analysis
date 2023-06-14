@@ -28,11 +28,11 @@ After editing the .bashrc folder if there is some error regarding the path, the 
 
 The Folders should be structured as follows 
 
-               --------------------------------nnUNetFrame-----------------------------------
-               |                                                                            |
-      ------Dataset-----------------------                                                nnUNet
-      |                |                 |
- nnUNet_raw   nnUNet_preprocessed  nnUNet_result
+                 --------------------------------nnUNetFrame-----------------------------------
+                 |                                                                            |
+        ------Dataset-----------------------                                                nnUNet
+        |                |                 |
+    nnUNet_raw   nnUNet_preprocessed  nnUNet_result
  
  
 # Preprocessing the data for training
