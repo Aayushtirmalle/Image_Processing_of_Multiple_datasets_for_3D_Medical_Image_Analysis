@@ -27,6 +27,7 @@ After editing the .bashrc folder if there is some error regarding the path, the 
         pip install --upgrade git+https://github.com/FabianIsensee/hiddenlayer.git
 
 The Folders should be structured as follows 
+
                --------------------------------nnUNetFrame-----------------------------------
                |                                                                            |
       ------Dataset-----------------------                                                nnUNet
