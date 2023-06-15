@@ -57,5 +57,5 @@ There are 1,2,3,4,5 folds in training, where 0 is the least and so on.
         
 # How to use the files, what changes have been made/to be made
 All the Dataset_generator python files are created for nnUNetv2 
-  1. BraTS2021- The dataset can be downloaded from official website or from kaggle is the datasset is not available on th official website. 
+  1. BraTS2021- The dataset can be downloaded from official website or from kaggle if the datasset is not available on th official website. 
  
