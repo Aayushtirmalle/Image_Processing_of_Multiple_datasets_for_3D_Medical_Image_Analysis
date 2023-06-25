@@ -49,11 +49,11 @@ There are 1,2,3,4,5 folds in training, where 0 is the least and so on.
 
 -> For Training 2d data:
         
-        nnUNet train <DATASET_NAME OR DATASET_ID> 2d <FOLD>
+        nnUNetv2_train DATASET_NAME_OR_ID 2d FOLD [--npz]
         
 -> For Training 3d Data:
 
-        nnUNet train <DATASET_NAME OR DATASET_ID> 3d_fullres <FOLD>
+        nnUNetv2_train DATASET_NAME_OR_ID 3d_fullres FOLD [--npz]
         
 # How to use the files, what changes have been made/to be made
 All the Dataset_generator python files are created for nnUNetv2 
