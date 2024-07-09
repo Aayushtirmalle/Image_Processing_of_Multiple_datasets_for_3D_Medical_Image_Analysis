@@ -141,4 +141,40 @@ There are 1,2,3,4,5 folds in training, where 0 is the least and so on.
    ```bash
    python nnunetv2_evaluate.py --model_dir models --data_dir preprocessed_data
    ```
+
+## Task 2: Alzheimer's Disease Detection
+
+### Datasets
+For the deep learning model training, T1-weighted structural MRI scans from the ADNI dataset are used. Over 3000 preprocessed scans are categorized into Alzheimer's Disease (AD), Mild Cognitive Impairment (MCI), and Cognitively Normal (CN) based on memory tasks, adjusted for education level.
+Download the ADNI dataset and organize it in the following structure:
+```bash
+data/
+└── ADNI/
+    ├── AD/
+    ├── MCI/
+    └── CN/
+```
+
+### Data Preprocessing
+
+The preprocessing steps involve multiplanar reconstruction, Gradwarp correction, B1 non-uniformity correction, N3 intensity normalization, registration to standard space, segmentation, quality control, and data splitting.
+
+1. Run the preprocessing script:
+   ```bash
+   python adni_preprocessing.py --data_dir data/ADNI --output_dir preprocessed_adni
+   ```
+
+### Training the Model
+
+1. Train the deep learning model:
+   ```bash
+   python adni_train.py --data_dir preprocessed_adni --output_dir models/adni_model
+   ```
+
+### Evaluation
+
+1. Evaluate the deep learning model:
+   ```bash
+   python adni_evaluate.py --model_dir models/adni_model --data_dir preprocessed_adni
+   ```
    
