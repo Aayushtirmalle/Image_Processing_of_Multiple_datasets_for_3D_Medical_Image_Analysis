@@ -68,3 +68,38 @@ All the Dataset_generator python files are created for nnUNetv2
 
   5. kIts19 - The dataset can be downloaded from the official website or from kaggle if the dataset is not available on the offiical website.
  
+# Medical Image Analysis with nnUNetv2 and Alzheimer's Disease Detection
+
+This repository provides the code and instructions to perform two key tasks in medical image analysis:
+1. Biomedical image segmentation using nnUNetv2.
+2. Alzheimer's disease detection using a deep learning model trained on structural MRIs.
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Task 1: nnUNetv2 for Biomedical Image Segmentation](#task-1-nnunetv2-for-biomedical-image-segmentation)
+  - [Datasets](#datasets)
+  - [Data Preprocessing](#data-preprocessing)
+  - [Training the Model](#training-the-model)
+  - [Evaluation](#evaluation)
+- [Task 2: Alzheimer's Disease Detection](#task-2-alzheimers-disease-detection)
+  - [Datasets](#datasets-1)
+  - [Data Preprocessing](#data-preprocessing-1)
+  - [Training the Model](#training-the-model-1)
+  - [Evaluation](#evaluation-1)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Prerequisites
+
+- Python 3.8+
+- GPU with CUDA support (recommended for training)
+- [Conda](https://docs.conda.io/en/latest/miniconda.html) for environment management
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/medical-image-analysis.git
+   cd medical-image-analysis
