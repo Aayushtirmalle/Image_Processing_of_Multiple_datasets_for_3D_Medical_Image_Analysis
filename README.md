@@ -56,17 +56,7 @@ There are 1,2,3,4,5 folds in training, where 0 is the least and so on.
 
         nnUNetv2_train DATASET_NAME_OR_ID 3d_fullres FOLD [--npz]
         
-# How to use the files, what changes have been made/to be made
-All the Dataset_generator python files are created for nnUNetv2 
-  1. BraTS2021- The dataset can be downloaded from official website or from kaggle if the datasset is not available on the official website.
 
-  2. AMOS2022 - The dataset can be downloaded from the official website or from kaggle if the dataset is not available on the officaial website.
-
-  3. KiTs23 - The dataset can be downloaded from the official website or from kaggle if the dataset is not availble on the official website.
-
-  4. BITS - The dataset can be downloaded from the official website or from kaggle if the dataset is not availble on the official website.
-
-  5. kIts19 - The dataset can be downloaded from the official website or from kaggle if the dataset is not available on the offiical website.
  
 # Medical Image Analysis with nnUNetv2 and Alzheimer's Disease Detection
 
@@ -78,12 +68,12 @@ This repository provides the code and instructions to perform two key tasks in m
 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Task 1: nnUNetv2 for Biomedical Image Segmentation](#task-1-nnunetv2-for-biomedical-image-segmentation)
+- [Software 1: nnUNetv2 for Biomedical Image Segmentation](#Software-1-nnunetv2-for-biomedical-image-segmentation)
   - [Datasets](#datasets)
   - [Data Preprocessing](#data-preprocessing)
   - [Training the Model](#training-the-model)
   - [Evaluation](#evaluation)
-- [Task 2: Alzheimer's Disease Detection](#task-2-alzheimers-disease-detection)
+- [Software 2: Alzheimer's Disease Detection](#Software-2-alzheimers-disease-detection)
   - [Datasets](#datasets-1)
   - [Data Preprocessing](#data-preprocessing-1)
   - [Training the Model](#training-the-model-1)
@@ -103,3 +93,52 @@ This repository provides the code and instructions to perform two key tasks in m
    ```bash
    git clone https://github.com/yourusername/medical-image-analysis.git
    cd medical-image-analysis
+2. Create a conda environment and install dependencies:
+   ```bash
+   conda create -n medimg python=3.8
+   conda activate medimg
+   pip install -r requirements.txt
+
+## Software 1: nnUNetv2 for Biomedical Image Segmentation 
+
+### Datasets
+
+For this task, we will use several biomedical datasets such as BraTs2021, AMOS22, KiTS23, and BTCV. Download the datasets and organize them in the following structure:
+ ```bash
+    data/
+        ├── BraTs2021/
+        ├── AMOS22/
+        ├── KiTS23/
+        └── BTCV/
+ ```
+### Data Preprocessing
+
+nnUNetv2 requires specific preprocessing steps. The preprocessing will include dataset analysis, resampling, normalization, data augmentation, and splitting.
+1. Preprocess the raw data using the command -
+  ```bash
+   nnUNetv2_plan_and_preprocess -d <DATASET_ID>--verify_dataset_integrity
+  ```
+
+### Training the Model
+
+1. To Train the preprocessed dataset
+It is better to reduce the batch size to avoid the error "cuda: Out of memory"
+There are 1,2,3,4,5 folds in training, where 0 is the least and so on.
+
+-> For Training 2d data:
+  ```bash
+  nnUNetv2_train DATASET_NAME_OR_ID 2d FOLD [--npz]
+  ```
+        
+-> For Training 3d Data:
+  ```bash
+   nnUNetv2_train DATASET_NAME_OR_ID 3d_fullres FOLD [--npz]
+  ```
+
+### Evaluation
+
+1. Evaluate the nnUNetv2 Model
+   ```bash
+   python nnunetv2_evaluate.py --model_dir models --data_dir preprocessed_data
+   ```
+   
