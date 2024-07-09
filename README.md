@@ -1,63 +1,3 @@
-# Image Processing of Multiple datasets for 3D Medical Image Analysis
-## Using nnUNetv2
-Training the nnUNetv2 using virtual machine and Docker
-
-# Setting up the software for training
-
-1. Install Pytorch, cuda
-
-1. Install the nnUNet software using interactive shell
-
-        git clone https://github.com/MIC-DKFZ/nnUNet.git
-        cd nnUNet
-        pip install -e .
-
-
-2. Create folders "nnUNet_raw, nnUNet_preprocessed, nnUNet_trained data" and set the path for the same, while using docker set the paths with respect to the docker path.
-
-Locate the .bashrc file in your home folder of the docker and add the following lines to the bottom:
-
-        export nnUNet_raw="/home/abc/nnUNetFrame/dataset/nnUNet_raw"
-        export nnUNet_preprocessed="/home/abc/nnUNetFrame/dataset/nnUNet_preprocessed"
-        export nnUNet_results="/home/abc/nnUNetFrame/dataset/nnUNet_results"
-        
-After editing the .bashrc folder if there is some error regarding the path, the "same lines" can be used temporarily(every time the docker is restarted it needs to be executed so prevent errors.
-
-4. Install the hiddenlayer for nnUNet
-  
-        pip install --upgrade git+https://github.com/FabianIsensee/hiddenlayer.git
-
-The Folders should be structured as follows 
-
-                 --------------------------------nnUNetFrame-----------------------------------
-                 |                                                                            |
-        ------Dataset-----------------------                                                nnUNet
-        |                |                 |
-    nnUNet_raw   nnUNet_preprocessed  nnUNet_result
- 
- 
-# Preprocessing the data for training
-
-1. download the raw dataset
-
-2. Preprocess the raw data using the command -
-
-        nnUNetv2_plan_and_preprocess -d <DATASET_ID>--verify_dataset_integrity
-
-# To Train the preprocessed dataset
-It is better to reduce the batch size to avoid the error "cuda: Out of memory"
-There are 1,2,3,4,5 folds in training, where 0 is the least and so on.
-
--> For Training 2d data:
-        
-        nnUNetv2_train DATASET_NAME_OR_ID 2d FOLD [--npz]
-        
--> For Training 3d Data:
-
-        nnUNetv2_train DATASET_NAME_OR_ID 3d_fullres FOLD [--npz]
-        
-
- 
 # Medical Image Analysis with nnUNetv2 and Alzheimer's Disease Detection
 
 This repository provides the code and instructions to perform two key tasks in medical image analysis:
@@ -67,8 +7,8 @@ This repository provides the code and instructions to perform two key tasks in m
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
-- [Installation](#installation)
 - [Software 1: nnUNetv2 for Biomedical Image Segmentation](#Software-1-nnunetv2-for-biomedical-image-segmentation)
+  - [Installation](#installation)
   - [Datasets](#datasets)
   - [Data Preprocessing](#data-preprocessing)
   - [Training the Model](#training-the-model)
@@ -85,32 +25,48 @@ This repository provides the code and instructions to perform two key tasks in m
 
 - Python 3.8+
 - GPU with CUDA support (recommended for training)
+- Pytorch
 - [Conda](https://docs.conda.io/en/latest/miniconda.html) for environment management
 
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/medical-image-analysis.git
-   cd medical-image-analysis
-2. Create a conda environment and install dependencies:
-   ```bash
-   conda create -n medimg python=3.8
-   conda activate medimg
-   pip install -r requirements.txt
-
 ## Software 1: nnUNetv2 for Biomedical Image Segmentation 
+
+### Installation
+
+1. Install the nnUNet software using interactive shell
+   ```bash
+        git clone https://github.com/MIC-DKFZ/nnUNet.git
+        cd nnUNet
+        pip install -e .
+   ```
+
+
+2. Create folders "nnUNet_raw, nnUNet_preprocessed, nnUNet_trained data" and set the path for the same, while using docker set the paths with respect to the docker path.
+
+Locate the .bashrc file in your home folder of the docker and add the following lines to the bottom:
+   ```bash
+        export nnUNet_raw="/home/abc/nnUNetFrame/dataset/nnUNet_raw"
+        export nnUNet_preprocessed="/home/abc/nnUNetFrame/dataset/nnUNet_preprocessed"
+        export nnUNet_results="/home/abc/nnUNetFrame/dataset/nnUNet_results"
+   ```
+        
+After editing the .bashrc folder if there is some error regarding the path, the "same lines" can be used temporarily(every time the docker is restarted it needs to be executed so prevent errors.
+
+4. Install the hiddenlayer for nnUNet
+  ```bash
+        pip install --upgrade git+https://github.com/FabianIsensee/hiddenlayer.git
+  ```
 
 ### Datasets
 
 For this task, we will use several biomedical datasets such as BraTs2021, AMOS22, KiTS23, and BTCV. Download the datasets and organize them in the following structure:
- ```bash
-    data/
-        ├── BraTs2021/
-        ├── AMOS22/
-        ├── KiTS23/
-        └── BTCV/
- ```
+The Folders should be structured as follows 
+
+                 --------------------------------nnUNetFrame-----------------------------------
+                 |                                                                            |
+        ------Dataset-----------------------                                                nnUNet
+        |                |                 |
+    nnUNet_raw   nnUNet_preprocessed  nnUNet_result
+
 ### Data Preprocessing
 
 nnUNetv2 requires specific preprocessing steps. The preprocessing will include dataset analysis, resampling, normalization, data augmentation, and splitting.
