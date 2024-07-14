@@ -223,7 +223,11 @@ run_convert.sh
 1. Evaluate the deep learning model:
    To do the evaluation, I have used this "eval.ipynb" file
 
-![Description of Image]("C:\Users\User\Pictures\Picture1.png")
+When I performed the evaluation this is my result:
+![Picture1](https://github.com/user-attachments/assets/c118ddb9-4e12-426a-b28f-d5d31ee6dbfb)
+
+
+
 
 
    
