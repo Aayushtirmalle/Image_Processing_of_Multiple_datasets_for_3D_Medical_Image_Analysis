@@ -18,8 +18,7 @@ This repository provides the code and instructions to perform two key tasks in m
   - [Data Preprocessing](#data-preprocessing-1)
   - [Training the Model](#training-the-model-1)
   - [Evaluation](#evaluation-1)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Prerequisites
 
