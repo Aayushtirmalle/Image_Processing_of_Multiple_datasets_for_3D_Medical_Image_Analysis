@@ -225,7 +225,7 @@ run_convert.sh
 
 When I performed the evaluation this is my result:
 <p align="center">
-<img width="460" height="300" src="![Picture1](https://github.com/user-attachments/assets/0b3ba9d8-dd68-4f94-9298-34eaf0433aa2)">
+<img width="460" height="300" src="https://github.com/user-attachments/assets/0b3ba9d8-dd68-4f94-9298-34eaf0433aa2">
 
 </p>
 
