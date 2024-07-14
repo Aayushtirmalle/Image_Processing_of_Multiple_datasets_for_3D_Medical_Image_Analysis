@@ -224,8 +224,10 @@ run_convert.sh
    To do the evaluation, I have used this "eval.ipynb" file
 
 When I performed the evaluation this is my result:
-![Picture1](https://github.com/user-attachments/assets/c118ddb9-4e12-426a-b28f-d5d31ee6dbfb)
+<p align="center">
+<img width="460" height="300" src="![Picture1](https://github.com/user-attachments/assets/0b3ba9d8-dd68-4f94-9298-34eaf0433aa2)">
 
+</p>
 
 
 
