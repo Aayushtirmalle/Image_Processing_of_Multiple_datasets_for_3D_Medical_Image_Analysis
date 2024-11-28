@@ -1,70 +1,14 @@
-# Medical Image Analysis with nnUNetv2 and Alzheimer's Disease Detection
+# Image Processing of Multiple Datasets for 3D Medical Image Analysis
 
-This repository provides the code and instructions to perform two key tasks in medical image analysis:
-1. Biomedical image segmentation using nnUNetv2.
-2. Alzheimer's disease detection using a deep learning model trained on structural MRIs.
+This repository contains the code and resources for the project "Image Processing of Multiple Datasets for 3D Medical Image Analysis", which focuses on training and evaluating models for medical image segmentation and Alzheimer's disease detection using deep learning techniques.
 
-## Table of Contents
+### Project Overview
 
-- [Prerequisites](#prerequisites)
-- [Software 1: nnUNetv2 for Biomedical Image Segmentation](#Software-1-nnunetv2-for-biomedical-image-segmentation)
-  - [Installation](#installation)
-  - [Datasets](#datasets)
-  - [Data Preprocessing](#data-preprocessing)
-  - [Training the Model](#training-the-model)
-  - [Evaluation](#evaluation)
-- [Software 2: Alzheimer's Disease Detection](#Software-2-alzheimers-disease-detection)
-  - [Datasets](#datasets-1)
-  - [Data Preprocessing](#data-preprocessing-1)
-  - [Training the Model](#training-the-model-1)
-  - [Evaluation](#evaluation-1)
+This project utilized two state-of-the-art frameworks for medical image analysis:
+1.  nnUNetv2 : A self-configuring deep learning framework designed for biomedical image segmentation.
+2.  CNN Design for Alzheimer's Disease (AD):A convolutional neural network (CNN) tailored for early detection of Alzheimer's disease using MRI data. 
 
-
-## Prerequisites
-
-- For Software 1 
-    - Python 3.8+
-    - GPU with CUDA support (recommended for training)
-    - Pytorch
-    - [Conda](https://docs.conda.io/en/latest/miniconda.html) for environment management
-
-- For Software 2
-    - Python 
-    - PyTorch
-    - torchvision
-    - progress
-    - matplotlib
-    - numpy
-    - visdom
-    - Clinica
-
-## Software 1: nnUNetv2 for Biomedical Image Segmentation 
-
-### Installation
-
-1. Install the nnUNet software using interactive shell
-   ```bash
-        git clone https://github.com/MIC-DKFZ/nnUNet.git
-        cd nnUNet
-        pip install -e .
-   ```
-
-
-2. Create folders "nnUNet_raw, nnUNet_preprocessed, nnUNet_trained data" and set the path for the same, while using docker set the paths with respect to the docker path.
-
-Locate the .bashrc file in your home folder of the docker and add the following lines to the bottom:
-   ```bash
-        export nnUNet_raw="/home/abc/nnUNetFrame/dataset/nnUNet_raw"
-        export nnUNet_preprocessed="/home/abc/nnUNetFrame/dataset/nnUNet_preprocessed"
-        export nnUNet_results="/home/abc/nnUNetFrame/dataset/nnUNet_results"
-   ```
-        
-After editing the .bashrc folder if there is some error regarding the path, the "same lines" can be used temporarily(every time the docker is restarted it needs to be executed so prevent errors.
-
-4. Install the hiddenlayer for nnUNet
-  ```bash
-        pip install --upgrade git+https://github.com/FabianIsensee/hiddenlayer.git
-  ```
+The primary objective was to preprocess, train, and evaluate these models using public datasets, analyzing their performance on segmentation and classification tasks.
 
 ### Datasets
 
@@ -91,7 +35,7 @@ Dataset001_BraTs2021/
 - **labelsTr** contains the images with the ground truth segmentation maps for the training cases.
 - **dataset.json** contains metadata of the dataset.
 
-For example for the first Dataset of the MSD: BraTs2021. This dataset hat four input channels: FLAIR (0000), T1w (0001), T1gd (0002) and T2w (0003). Note that the imagesTs folder is optional and does not have to be present.
+For example for the first Dataset of the MSD: BraTs2021. This dataset has four input channels: FLAIR (0000), T1w (0001), T1gd (0002) and T2w (0003). Note that the imagesTs folder is optional and does not have to be present.
 ```bash
 nnUNet_raw/Dataset001_BraTs2021/
 ├── dataset.json
@@ -123,13 +67,7 @@ nnUNet_raw/Dataset001_BraTs2021/
 ```
 
 
-### Data Preprocessing
 
-nnUNetv2 requires specific preprocessing steps. The preprocessing will include dataset analysis, resampling, normalization, data augmentation, and splitting.
-1. Preprocess the raw data using the command -
-  ```bash
-   nnUNetv2_plan_and_preprocess -d <DATASET_ID>--verify_dataset_integrity
-  ```
 
 ### Training the Model
 
@@ -228,7 +166,10 @@ When I performed the evaluation this is my result:
 
 </p>
 
+### Reference 
 
+- [Github repository for nnUNetv2](https://github.com/MIC-DKFZ/nnUNet)
+- [Github repository for CNN_design_for_AD](https://github.com/NYUMedML/CNN_design_for_AD)
 
 
    
