@@ -108,6 +108,7 @@ nnUNet_results/
    ```bash
    python nnunetv2_evaluate.py --model_dir models --data_dir preprocessed_data
    ```
+  
 
 ## Software 2: Alzheimer's Disease Detection
 
@@ -157,14 +158,10 @@ run_convert.sh
 
 ### Evaluation
 
+
 1. Evaluate the deep learning model:
-   To do the evaluation, I have used this "eval.ipynb" file
+   Used this "eval.ipynb" file for evaluating.
 
-When I performed the evaluation this is my result:
-<p align="center">
-<img width="460" height="300" src="https://github.com/user-attachments/assets/0b3ba9d8-dd68-4f94-9298-34eaf0433aa2">
-
-</p>
 
 ### Reference 
 
